@@ -50,8 +50,8 @@ export default {
           },
       ).then(res => {
         console.log(res.data)
-        sessionStorage.setItem('access', res.data.accessToken)
-        localStorage.setItem('refresh', res.data.refreshToken)
+        sessionStorage.setItem('accessToken', 'Bearer ' + res.data.accessToken)
+        localStorage.setItem('refreshToken', res.data.refreshToken)
         location.replace('/');
       }).catch(error => {
         console.log(error.response.data);

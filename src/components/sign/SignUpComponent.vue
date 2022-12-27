@@ -59,7 +59,6 @@ export default {
       name: '',
       nickname: '',
     }
-
   },
   created() {
 
@@ -76,6 +75,7 @@ export default {
           },
       ).then(res => {
         console.log(res)
+        location.replace("/");
       }).catch(error => {
         console.log(error)
         let datas = error.response.data;

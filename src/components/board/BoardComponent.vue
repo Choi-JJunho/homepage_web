@@ -53,7 +53,10 @@ export default {
   },
   methods: {
     fetchData() {
-      axios.get('http://localhost:8080/board/list')
+      axios.get('http://localhost:8080/board/list',
+          {
+            headers: {Authorization: sessionStorage.getItem('accessToken')}
+          })
           .then((res) => {
             console.log(res.data);
             this.boards = res.data;
@@ -68,7 +71,7 @@ export default {
             title: this.boardTitle,
             description: this.boardDescription
           }, {
-            headers: {Authorization: sessionStorage.getItem('access')}
+            headers: {Authorization: sessionStorage.getItem('accessToken')}
           })
           .then((res) => {
             console.log(res);

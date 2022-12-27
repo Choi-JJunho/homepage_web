@@ -71,7 +71,7 @@ export default {
             title: this.title,
             description: this.description
           }, {
-            headers: {Authorization: sessionStorage.getItem('access')}
+            headers: {Authorization: sessionStorage.getItem('accessToken')}
           })
           .then((res) => {
             console.log(this.boardId)

@@ -54,8 +54,9 @@ export default {
       axios.get('http://localhost:8080/users',
           {
             params: {
-              keyword: this.searchQuery
-            }
+              keyword: this.searchQuery,
+            },
+            headers: {Authorization: sessionStorage.getItem('accessToken')}
           }
       )
           .then((res) => {
