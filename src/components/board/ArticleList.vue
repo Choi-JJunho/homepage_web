@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
   name: "ArticleList",
@@ -55,9 +54,8 @@ export default {
   },
   methods: {
     fetchData() {
-      axios.get('http://localhost:8080/board/' + this.boardId + '/list')
+      this.axios.get('http://localhost:8080/board/' + this.boardId + '/list')
           .then((res) => {
-            console.log(res.data);
             this.articles = res.data.content;
           })
           .catch((error) => {
@@ -65,7 +63,7 @@ export default {
           })
     },
     postArticle() {
-      axios.post('http://localhost:8080/article/post',
+      this.axios.post('http://localhost:8080/article/post',
           {
             boardId: this.boardId,
             title: this.title,

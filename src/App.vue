@@ -1,7 +1,7 @@
 <template>
-  <my-header v-if="this.$route.path !== '/login'"></my-header>
+  <my-header v-if="this.$route.path !== '/signin'"></my-header>
   <router-view></router-view>
-  <my-footer v-if="this.$route.path !== '/login'"></my-footer>
+  <my-footer v-if="this.$route.path !== '/signin'"></my-footer>
 </template>
 
 <script>

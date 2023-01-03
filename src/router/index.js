@@ -8,13 +8,35 @@ import articleView from "@/components/board/ArticleView";
 import articleList from "@/components/board/ArticleList";
 
 const routes = [
-    {path: "/login", component: signInComponent,},
-    {path: "/", component: mainComponent,},
-    {path: "/meeting", component: videoComponent,},
-    {path: "/signup", component: signUpComponent},
-    {path: "/board", component: boardComponent},
-    {path: "/board/:id/list", component: articleList},
-    {path: "/article/:id", component: articleView}
+    {
+        path: "/signin",
+        component: signInComponent,
+    },
+    {
+        path: "/",
+        component: mainComponent,
+    },
+    {
+        path: "/playground",
+        component: videoComponent,
+    },
+    {
+        path: "/signup",
+        component: signUpComponent
+    },
+    {
+        path: "/board",
+        component: boardComponent
+    },
+    {
+        path: "/board/:id/list",
+        component: articleList
+    },
+    {
+        path: "/article/:id",
+        component: articleView
+    }
+
 ];
 
 const router = createRouter({

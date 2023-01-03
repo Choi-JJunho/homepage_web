@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
   name: "BoardComponent",
@@ -53,12 +52,11 @@ export default {
   },
   methods: {
     fetchData() {
-      axios.get('http://localhost:8080/board/list',
+      this.axios.get('http://localhost:8080/board/list',
           {
             headers: {Authorization: sessionStorage.getItem('accessToken')}
           })
           .then((res) => {
-            console.log(res.data);
             this.boards = res.data;
           })
           .catch((error) => {
@@ -66,7 +64,7 @@ export default {
           })
     },
     postBoard() {
-      axios.post('http://localhost:8080/board/post',
+      this.axios.post('http://localhost:8080/board/post',
           {
             title: this.boardTitle,
             description: this.boardDescription

@@ -6,4 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
-createApp(App).use(router, axios).mount('#app')
+const app = createApp(App);
+app.config.globalProperties.axios = axios;
+app.use(router)
+    .mount('#app')
